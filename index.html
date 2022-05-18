@@ -1,0 +1,66 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADUCTOR</title>
+    <link rel="stylesheet" href="calculos.css">
+<style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style></head>
+<body cz-shortcut-listen="true">
+    <section>
+        <h1>
+            SCRIPT PARA SUMATORIA
+        </h1>
+        <div class="grid_title">
+            <div class="calculos" id="SUMA">X = 4</div>
+            <div class="calculos" id="RES">SUMATORIA = 3.1378528915956805</div>
+        </div>
+    </section>
+    <script>
+        function traductor(p){
+            switch (true)
+            {
+                case ["perro", "Perro", "PERRO"].includes(p):
+                    p2="dog";break; 
+                case ["gato", "GATO", "Gato"].includes(p):
+                    p2="cat";break; 
+                case ["conejo", "CONEJO", "Conejo"].includes(p):
+                    p2="rabbit";break; 
+                case ["elefante", "ELEFANTE", "Elefante"].includes(p):
+                    p2="elephant";break; 
+                default:
+                    p2="no tengo esa traduccion :/"; 
+            }
+            return p2;
+        }
+        function factorial(n){
+            var total = 1; 
+            for (i=1; i<=n; i++) {
+                total = total * i; 
+            }
+            return total; 
+        }
+        function sumatoria(m){
+            var total=0;
+            for (i=0; i<m; i++) {
+                total = total + ((Math.pow(-1/3,i))/((2*i)+1)); 
+            }
+            return Math.sqrt(12)*total;
+        }
+
+        p=prompt('introduzca la palabra a traducir')
+        document.getElementById("salida").innerHTML ="la palabra en ingles es "+traductor(p);   
+        document.getElementById("ESP").innerHTML =""+p;    
+        document.getElementById("ENG").innerHTML =""+traductor(p); 
+        
+        f=prompt('introduzca numero para factorial : ')
+        document.getElementById("FACT").innerHTML ="FACTORIAL ( "+f+" ) =";    
+        document.getElementById("RESULT").innerHTML =""+factorial(f); 
+
+        S=prompt('introduzca X para sumatoria : ')
+        document.getElementById("SUMA").innerHTML ="X = "+S;    
+        document.getElementById("RES").innerHTML ="SUMATORIA = "+sumatoria(S); 
+    </script>
+    
+
+
+</body></html>
